@@ -1,0 +1,670 @@
+/* =============================================
+   SPORT RENT — Головний CSS файл
+   Версія з повною адаптацією для всіх пристроїв
+   ============================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;600;700;900&display=swap');
+
+/* =============================================
+   CSS ЗМІННІ
+   ============================================= */
+:root {
+  --navy:        #0d1b2a;
+  --navy-mid:    #1b2d42;
+  --navy-light:  #243447;
+  --orange:      #f4700a;
+  --orange-h:    #ff8c2e;
+  --white:       #f0f4f8;
+  --gray:        #8a9bb0;
+  --card-bg:     #162030;
+  --radius:      10px;
+  --shadow:      0 4px 24px rgba(0,0,0,0.35);
+  --font-head:   'Bebas Neue', sans-serif;
+  --font-body:   'Nunito', sans-serif;
+  --transition:  0.25s ease;
+  --space-xs:    8px;
+  --space-sm:    16px;
+  --space-md:    24px;
+  --space-lg:    40px;
+  --touch-min:   44px;
+}
+
+/* =============================================
+   RESET & BASE
+   ============================================= */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--navy);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+a {
+  color: var(--orange);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+a:hover { color: var(--orange-h); }
+
+/* Видимий фокус для клавіатурної навігації */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 3px solid var(--orange);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+img { max-width: 100%; height: auto; display: block; border-radius: var(--radius); }
+
+h1, h2, h3 { font-family: var(--font-head); letter-spacing: 1px; line-height: 1.1; }
+
+ul { list-style: none; }
+
+/* =============================================
+   HEADER / NAVIGATION
+   ============================================= */
+header {
+  background: var(--navy-mid);
+  border-bottom: 3px solid var(--orange);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: var(--shadow);
+}
+
+.header-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+}
+
+.logo {
+  font-family: var(--font-head);
+  font-size: 2rem;
+  color: var(--white);
+  letter-spacing: 2px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.logo span { color: var(--orange); }
+
+nav ul {
+  display: flex;
+  gap: var(--space-xs);
+  align-items: center;
+}
+
+nav ul li a {
+  color: var(--white);
+  font-weight: 700;
+  padding: 8px 18px;
+  border-radius: 6px;
+  transition: background var(--transition), color var(--transition);
+  white-space: nowrap;
+  min-height: var(--touch-min);
+  display: inline-flex;
+  align-items: center;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  background: var(--orange);
+  color: var(--navy);
+}
+
+/* Бургер-кнопка */
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: var(--space-xs);
+  min-width: var(--touch-min);
+  min-height: var(--touch-min);
+  align-items: center;
+  justify-content: center;
+}
+
+.burger span {
+  display: block;
+  width: 26px;
+  height: 3px;
+  background: var(--white);
+  border-radius: 2px;
+  transition: transform var(--transition), opacity var(--transition);
+}
+
+.burger.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.burger.open span:nth-child(2) { opacity: 0; }
+.burger.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+/* =============================================
+   MAIN
+   ============================================= */
+main {
+  flex: 1;
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  padding: var(--space-lg) var(--space-md);
+}
+
+.section-title {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  color: var(--white);
+  margin-bottom: 6px;
+}
+
+.section-title span { color: var(--orange); }
+
+.section-subtitle {
+  color: var(--gray);
+  margin-bottom: 32px;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+}
+
+/* =============================================
+   EQUIPMENT GRID
+   ============================================= */
+.equipment-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr));
+  gap: var(--space-md);
+}
+
+.equipment-card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--navy-light);
+  transition: transform var(--transition), border-color var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Hover тільки для пристроїв з мишкою */
+@media (hover: hover) {
+  .equipment-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--orange);
+  }
+}
+
+.equipment-card__img {
+  width: 100%;
+  height: clamp(150px, 18vw, 210px);
+  object-fit: cover;
+  border-radius: 0;
+}
+
+.equipment-card__img-placeholder {
+  width: 100%;
+  height: clamp(150px, 18vw, 210px);
+  background: linear-gradient(135deg, var(--navy-light), var(--navy-mid));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+}
+
+.equipment-card__body {
+  padding: var(--space-md);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.equipment-card__title { font-size: clamp(1.1rem, 2.5vw, 1.4rem); }
+
+.equipment-card__desc { color: var(--gray); font-size: 0.9rem; flex: 1; }
+
+.equipment-card__meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: var(--space-xs);
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+}
+
+.badge {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.badge--available { background: rgba(0,200,100,0.15); color: #00c864; }
+.badge--rented    { background: rgba(244,112,10,0.15); color: var(--orange); }
+
+.price {
+  font-family: var(--font-head);
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  color: var(--orange);
+}
+
+.price small { font-family: var(--font-body); font-size: 0.75rem; color: var(--gray); }
+
+/* =============================================
+   BUTTONS
+   ============================================= */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 22px;
+  border-radius: 6px;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  transition: background var(--transition), color var(--transition), transform var(--transition);
+  min-height: var(--touch-min);
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.btn--primary { background: var(--orange); color: var(--navy); width: 100%; text-align: center; }
+.btn--outline  { background: transparent; border: 2px solid var(--orange); color: var(--orange); }
+.btn--danger   { background: transparent; border: 2px solid #e74c3c; color: #e74c3c; }
+
+@media (hover: hover) {
+  .btn--primary:hover { background: var(--orange-h); transform: translateY(-1px); }
+  .btn--outline:hover { background: var(--orange); color: var(--navy); }
+  .btn--danger:hover  { background: #e74c3c; color: #fff; }
+}
+
+.btn:active { opacity: 0.85; transform: scale(0.98); }
+
+/* =============================================
+   RENTALS
+   ============================================= */
+.rentals-tabs {
+  display: flex;
+  gap: var(--space-xs);
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+
+.tab-btn {
+  padding: 10px 28px;
+  border-radius: 6px;
+  border: 2px solid var(--navy-light);
+  background: transparent;
+  color: var(--gray);
+  font-family: var(--font-body);
+  font-weight: 700;
+  cursor: pointer;
+  transition: all var(--transition);
+  min-height: var(--touch-min);
+  touch-action: manipulation;
+}
+
+.tab-btn.active, .tab-btn:hover {
+  border-color: var(--orange);
+  color: var(--orange);
+  background: rgba(244,112,10,0.08);
+}
+
+.rental-list { display: flex; flex-direction: column; gap: var(--space-sm); }
+
+.rental-card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  border: 1px solid var(--navy-light);
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  box-shadow: var(--shadow);
+  transition: border-color var(--transition);
+  flex-wrap: wrap;
+}
+
+@media (hover: hover) {
+  .rental-card:hover { border-color: var(--orange); }
+}
+
+.rental-card__icon { font-size: 2.5rem; flex-shrink: 0; }
+
+.rental-card__info { flex: 1; min-width: 160px; }
+
+.rental-card__name { font-size: 1.3rem; font-family: var(--font-head); }
+
+.rental-card__dates { color: var(--gray); font-size: 0.9rem; }
+
+.rental-card__actions { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+
+/* =============================================
+   PAYMENT PAGE
+   ============================================= */
+.payment-layout {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 32px;
+  align-items: start;
+}
+
+.payment-form-card,
+.payment-summary-card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: clamp(20px, 4vw, 32px);
+  border: 1px solid var(--navy-light);
+  box-shadow: var(--shadow);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--gray);
+}
+
+.form-group input,
+.form-group select {
+  background: var(--navy-light);
+  border: 1.5px solid var(--navy-light);
+  color: var(--white);
+  padding: 12px 14px;
+  border-radius: 6px;
+  font-family: var(--font-body);
+  font-size: 16px; /* Мінімум 16px — запобігає zoom в iOS */
+  transition: border-color var(--transition);
+  outline: none;
+  min-height: var(--touch-min);
+  width: 100%;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.form-group select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238a9bb0' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 40px;
+}
+
+.form-group input:focus,
+.form-group select:focus { border-color: var(--orange); }
+
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-sm); }
+
+.card-icons { display: flex; gap: 10px; margin-bottom: 20px; font-size: 2rem; }
+
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--navy-light);
+  color: var(--gray);
+  gap: var(--space-sm);
+}
+
+.summary-item:last-child { border-bottom: none; }
+
+.summary-total {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 0 0;
+  font-family: var(--font-head);
+  font-size: clamp(1.3rem, 3vw, 1.6rem);
+  color: var(--orange);
+  gap: var(--space-sm);
+}
+
+/* =============================================
+   FOOTER
+   ============================================= */
+footer {
+  background: var(--navy-mid);
+  border-top: 3px solid var(--orange);
+  padding: clamp(32px, 5vw, 48px) var(--space-md) var(--space-md);
+  margin-top: auto;
+}
+
+.footer-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: clamp(20px, 4vw, 40px);
+  margin-bottom: 32px;
+}
+
+.footer-brand .logo { font-size: 1.8rem; margin-bottom: 12px; }
+.footer-brand p { color: var(--gray); font-size: 0.9rem; max-width: 280px; }
+
+.footer-col h4 {
+  font-family: var(--font-head);
+  font-size: 1.2rem;
+  margin-bottom: 14px;
+  color: var(--orange);
+}
+
+.footer-col ul { display: flex; flex-direction: column; gap: var(--space-xs); }
+.footer-col ul li a {
+  color: var(--gray);
+  font-size: 0.9rem;
+  min-height: var(--touch-min);
+  display: inline-flex;
+  align-items: center;
+}
+.footer-col ul li a:hover { color: var(--white); }
+
+.footer-contact li {
+  color: var(--gray);
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  min-height: var(--touch-min);
+}
+
+.footer-bottom {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-top: 20px;
+  border-top: 1px solid var(--navy-light);
+  text-align: center;
+  color: var(--gray);
+  font-size: 0.85rem;
+}
+
+/* =============================================
+   ВЕЛИКІ ЕКРАНИ (≥ 1400px)
+   ============================================= */
+@media (min-width: 1400px) {
+  .equipment-grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+/* =============================================
+   ПЛАНШЕТ ЛАНДШАФТ + НОУТБУК (900px–1199px)
+   ============================================= */
+@media (max-width: 1199px) {
+  main { padding: var(--space-md); }
+  .equipment-grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+}
+
+/* =============================================
+   ПЛАНШЕТ ПОРТРЕТ (≤ 900px)
+   ============================================= */
+@media (max-width: 900px) {
+  .payment-layout { grid-template-columns: 1fr; }
+  .payment-summary-card { order: -1; }
+
+  .footer-inner { grid-template-columns: 1fr 1fr; }
+  .footer-brand { grid-column: 1 / -1; }
+
+  .equipment-grid { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: var(--space-sm); }
+}
+
+/* =============================================
+   МОБІЛЬНИЙ (≤ 600px)
+   ============================================= */
+@media (max-width: 600px) {
+  :root {
+    --space-md: 16px;
+    --space-lg: 24px;
+  }
+
+  .header-inner { padding: 0 var(--space-sm); height: 60px; }
+  .logo { font-size: 1.6rem; }
+
+  /* Мобільне меню */
+  nav {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background: var(--navy-mid);
+    border-bottom: 3px solid var(--orange);
+    padding: var(--space-sm);
+    z-index: 99;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+  }
+
+  nav.open { display: block; }
+
+  nav ul {
+    flex-direction: column;
+    gap: 4px;
+    align-items: stretch;
+  }
+
+  nav ul li a {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    padding: 12px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+  }
+
+  .burger { display: flex; }
+
+  main { padding: var(--space-sm); }
+
+  .equipment-grid { grid-template-columns: 1fr; gap: var(--space-sm); }
+
+  .equipment-card__body { padding: var(--space-sm); }
+
+  .rental-card { flex-direction: column; align-items: flex-start; gap: var(--space-sm); }
+
+  .rental-card__actions { width: 100%; justify-content: flex-start; }
+  .rental-card__actions .btn { flex: 1; min-width: 100px; }
+
+  .footer-inner { grid-template-columns: 1fr; gap: var(--space-md); }
+
+  .form-row { grid-template-columns: 1fr; }
+
+  .rentals-tabs { flex-direction: column; }
+  .tab-btn { text-align: center; }
+}
+
+/* =============================================
+   МАЛЕНЬКИЙ ТЕЛЕФОН (≤ 375px) — iPhone SE
+   ============================================= */
+@media (max-width: 375px) {
+  .logo { font-size: 1.3rem; }
+  .section-title { font-size: 1.5rem; }
+  .equipment-card__img-placeholder { height: 130px; font-size: 2.2rem; }
+  .payment-form-card, .payment-summary-card { padding: var(--space-sm); }
+  .form-group input, .form-group select { padding: 10px 12px; }
+  .btn { padding: 10px 12px; font-size: 0.88rem; }
+  .badge { font-size: 0.7rem; padding: 3px 8px; }
+  .rental-card__name { font-size: 1.1rem; }
+}
+
+/* =============================================
+   АЛЬБОМНИЙ ТЕЛЕФОН (landscape + low height)
+   ============================================= */
+@media (max-height: 500px) and (orientation: landscape) {
+  header { position: relative; }
+  .header-inner { height: 52px; }
+  nav { top: 52px; max-height: calc(100vh - 52px); overflow-y: auto; }
+  main { padding: var(--space-sm); }
+  .equipment-grid { grid-template-columns: repeat(2, 1fr); }
+  .equipment-card__img-placeholder { height: 120px; }
+}
+
+/* =============================================
+   ЗМЕНШЕНИЙ РУХ (accessibility)
+   ============================================= */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+  html { scroll-behavior: auto; }
+}
+
+/* =============================================
+   ДРУК
+   ============================================= */
+@media print {
+  header, footer, .burger, .btn, .rentals-tabs, nav { display: none !important; }
+
+  body { background: #fff; color: #000; font-size: 12pt; }
+
+  main { padding: 0; max-width: 100%; }
+
+  .equipment-grid { grid-template-columns: repeat(3, 1fr); gap: 12px; }
+
+  .equipment-card, .rental-card, .payment-form-card, .payment-summary-card {
+    background: #fff;
+    border: 1px solid #ccc;
+    box-shadow: none;
+    break-inside: avoid;
+  }
+
+  .equipment-card__title, .rental-card__name { color: #000; }
+  .equipment-card__desc, .rental-card__dates  { color: #555; }
+  .price, .section-title span, .summary-total { color: #c45500; }
+  .payment-layout { grid-template-columns: 1fr; }
+}
