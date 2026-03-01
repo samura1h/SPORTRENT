@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SportRent — Обладнання</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header>
+    <div class="header-inner">
+      <a href="equipment.html" class="logo">SPORT<span>RENT</span></a>
+
+      <button class="burger" id="burgerBtn" aria-label="Відкрити меню">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav id="mainNav">
+        <ul>
+          <li><a href="equipment.html" class="active">Обладнання</a></li>
+          <li><a href="rental.html">Мої оренди</a></li>
+          <li><a href="payment.html">Оплата</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== MAIN ===== -->
+  <main>
+    <h1 class="section-title">Наше <span>обладнання</span></h1>
+    <p class="section-subtitle">Обирайте спорядження, яке підходить саме вам — від велосипедів до лиж</p>
+
+    <!-- Список переваг (семантичний ul) -->
+    <section aria-labelledby="features-title">
+      <h2 id="features-title" class="section-title" style="font-size:1.6rem; margin-bottom:12px;">Чому обирають нас</h2>
+      <ul style="display:flex; gap:16px; flex-wrap:wrap; margin-bottom:36px;">
+        <li style="background:var(--card-bg); border:1px solid var(--navy-light); padding:12px 20px; border-radius:8px; color:var(--gray);">⚡ Швидке оформлення</li>
+        <li style="background:var(--card-bg); border:1px solid var(--navy-light); padding:12px 20px; border-radius:8px; color:var(--gray);">🔒 Безпечні платежі</li>
+        <li style="background:var(--card-bg); border:1px solid var(--navy-light); padding:12px 20px; border-radius:8px; color:var(--gray);">📦 Доставка на місце</li>
+        <li style="background:var(--card-bg); border:1px solid var(--navy-light); padding:12px 20px; border-radius:8px; color:var(--gray);">🛠 Технічна підтримка</li>
+      </ul>
+    </section>
+
+    <!-- Сітка обладнання -->
+    <section aria-label="Список обладнання">
+      <div class="equipment-grid" id="equipmentGrid">
+
+        <!-- Картка 1 -->
+        <article class="equipment-card">
+          <div class="equipment-card__img-placeholder">🚴</div>
+          <div class="equipment-card__body">
+            <h3 class="equipment-card__title">Гірський велосипед</h3>
+            <p class="equipment-card__desc">Надійний велосипед для гірських трас і міських маршрутів. Амортизатори, 21 швидкість.</p>
+            <div class="equipment-card__meta">
+              <span class="badge badge--available">Доступний</span>
+              <p class="price">150 <small>грн/день</small></p>
+            </div>
+            <a href="payment.html" class="btn btn--primary" style="margin-top:12px;">Орендувати</a>
+          </div>
+        </article>
+
+        <!-- Картка 2 -->
+        <article class="equipment-card">
+          <div class="equipment-card__img-placeholder">⛷</div>
+          <div class="equipment-card__body">
+            <h3 class="equipment-card__title">Гірські лижі</h3>
+            <p class="equipment-card__desc">Комплект лиж для середнього рівня підготовки. Включає черевики та палиці.</p>
+            <div class="equipment-card__meta">
+              <span class="badge badge--available">Доступний</span>
+              <p class="price">250 <small>грн/день</small></p>
+            </div>
+            <a href="payment.html" class="btn btn--primary" style="margin-top:12px;">Орендувати</a>
+          </div>
+        </article>
+
+        <!-- Картка 3 -->
+        <article class="equipment-card">
+          <div class="equipment-card__img-placeholder">🛹</div>
+          <div class="equipment-card__body">
+            <h3 class="equipment-card__title">Роликові ковзани</h3>
+            <p class="equipment-card__desc">Професійні ролики з захисним спорядженням. Розміри 36–46.</p>
+            <div class="equipment-card__meta">
+              <span class="badge badge--rented">Орендовано</span>
+              <p class="price">90 <small>грн/день</small></p>
+            </div>
+            <button class="btn btn--outline" style="margin-top:12px; width:100%;" disabled>Недоступно</button>
+          </div>
+        </article>
+
+        <!-- Картка 4 -->
+        <article class="equipment-card">
+          <div class="equipment-card__img-placeholder">🏄</div>
+          <div class="equipment-card__body">
+            <h3 class="equipment-card__title">Серфборд</h3>
+            <p class="equipment-card__desc">Дошка для серфінгу, довжина 7 футів. Підходить для початківців.</p>
+            <div class="equipment-card__meta">
+              <span class="badge badge--available">Доступний</span>
+              <p class="price">200 <small>грн/день</small></p>
+            </div>
+            <a href="payment.html" class="btn btn--primary" style="margin-top:12px;">Орендувати</a>
+          </div>
+        </article>
+
+        <!-- Картка 5 -->
+        <article class="equipment-card">
+          <div class="equipment-card__img-placeholder">🏕</div>
+          <div class="equipment-card__body">
+            <h3 class="equipment-card__title">Туристичний намет</h3>
+            <p class="equipment-card__desc">Двомісний намет, водонепроникний, легкий — 1.8 кг. Ідеальний для походів.</p>
+            <div class="equipment-card__meta">
+              <span class="badge badge--available">Доступний</span>
+              <p class="price">120 <small>грн/день</small></p>
+            </div>
+            <a href="payment.html" class="btn btn--primary" style="margin-top:12px;">Орендувати</a>
+          </div>
+        </article>
+
+        <!-- Картка 6 -->
+        <article class="equipment-card">
+          <div class="equipment-card__img-placeholder">🎿</div>
+          <div class="equipment-card__body">
+            <h3 class="equipment-card__title">Сноуборд</h3>
+            <p class="equipment-card__desc">Сноуборд з кріпленнями та черевиками. Підходить для фрістайлу та трас.</p>
+            <div class="equipment-card__meta">
+              <span class="badge badge--available">Доступний</span>
+              <p class="price">220 <small>грн/день</small></p>
+            </div>
+            <a href="payment.html" class="btn btn--primary" style="margin-top:12px;">Орендувати</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <p class="logo">SPORT<span>RENT</span></p>
+        <p>Ваш надійний партнер у світі активного відпочинку та спорту.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Навігація</h4>
+        <ul>
+          <li><a href="equipment.html">Обладнання</a></li>
+          <li><a href="rental.html">Мої оренди</a></li>
+          <li><a href="payment.html">Оплата</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Контакти</h4>
+        <ul class="footer-contact">
+          <li>📍 вул. Спортивна, 12, Київ</li>
+          <li>📞 +38 (044) 123-45-67</li>
+          <li>✉️ info@sportrent.ua</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 SportRent. Усі права захищені.</p>
+    </div>
+  </footer>
+
+  <!-- ===== JS (місце для майбутнього коду) ===== -->
+  <script src="equipment.js" defer></script>
+  <script>
+    // TODO: Завантаження обладнання з API
+    // TODO: Фільтрація за категорією та ціною
+    // TODO: Пошук обладнання
+    // TODO: Додавання до кошика
+
+    /* Бургер-меню */
+    const burgerBtn = document.getElementById('burgerBtn');
+    const mainNav   = document.getElementById('mainNav');
+    burgerBtn.addEventListener('click', () => mainNav.classList.toggle('open'));
+  </script>
+
+</body>
+</html>

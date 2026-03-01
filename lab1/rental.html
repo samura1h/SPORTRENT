@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SportRent — Мої оренди</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header>
+    <div class="header-inner">
+      <a href="equipment.html" class="logo">SPORT<span>RENT</span></a>
+
+      <button class="burger" id="burgerBtn" aria-label="Відкрити меню">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav id="mainNav">
+        <ul>
+          <li><a href="equipment.html">Обладнання</a></li>
+          <li><a href="rental.html" class="active">Мої оренди</a></li>
+          <li><a href="payment.html">Оплата</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== MAIN ===== -->
+  <main>
+    <h1 class="section-title">Мої <span>оренди</span></h1>
+    <p class="section-subtitle">Керуйте активними та переглядайте завершені оренди</p>
+
+    <!-- Вкладки (Active / Past) -->
+    <div class="rentals-tabs" role="tablist">
+      <button class="tab-btn active" id="tabActive" role="tab" aria-selected="true">Активні</button>
+      <button class="tab-btn" id="tabPast" role="tab" aria-selected="false">Завершені</button>
+    </div>
+
+    <!-- Активні оренди -->
+    <section id="panelActive" role="tabpanel" aria-labelledby="tabActive">
+      <div class="rental-list">
+
+        <article class="rental-card">
+          <div class="rental-card__icon">🚴</div>
+          <div class="rental-card__info">
+            <p class="rental-card__name">Гірський велосипед</p>
+            <p class="rental-card__dates">📅 01.06.2024 — 05.06.2024 &nbsp;|&nbsp; 4 дні</p>
+            <p style="color:var(--gray); font-size:0.85rem; margin-top:4px;">Загальна вартість: <strong style="color:var(--orange);">600 грн</strong></p>
+          </div>
+          <div class="rental-card__actions">
+            <span class="badge badge--available">Активна</span>
+            <a href="payment.html" class="btn btn--outline">Продовжити</a>
+            <button class="btn btn--danger" id="cancelBtn1">Скасувати</button>
+          </div>
+        </article>
+
+        <article class="rental-card">
+          <div class="rental-card__icon">🏕</div>
+          <div class="rental-card__info">
+            <p class="rental-card__name">Туристичний намет</p>
+            <p class="rental-card__dates">📅 03.06.2024 — 07.06.2024 &nbsp;|&nbsp; 4 дні</p>
+            <p style="color:var(--gray); font-size:0.85rem; margin-top:4px;">Загальна вартість: <strong style="color:var(--orange);">480 грн</strong></p>
+          </div>
+          <div class="rental-card__actions">
+            <span class="badge badge--available">Активна</span>
+            <a href="payment.html" class="btn btn--outline">Продовжити</a>
+            <button class="btn btn--danger" id="cancelBtn2">Скасувати</button>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Завершені оренди (приховані за замовчуванням) -->
+    <section id="panelPast" role="tabpanel" aria-labelledby="tabPast" hidden>
+      <div class="rental-list">
+
+        <article class="rental-card" style="opacity:0.7;">
+          <div class="rental-card__icon">⛷</div>
+          <div class="rental-card__info">
+            <p class="rental-card__name">Гірські лижі</p>
+            <p class="rental-card__dates">📅 15.01.2024 — 22.01.2024 &nbsp;|&nbsp; 7 днів</p>
+            <p style="color:var(--gray); font-size:0.85rem; margin-top:4px;">Сплачено: <strong style="color:var(--white);">1 750 грн</strong></p>
+          </div>
+          <div class="rental-card__actions">
+            <span class="badge" style="background:rgba(138,155,176,0.15); color:var(--gray);">Завершена</span>
+            <button class="btn btn--outline">Орендувати знову</button>
+          </div>
+        </article>
+
+        <article class="rental-card" style="opacity:0.7;">
+          <div class="rental-card__icon">🏄</div>
+          <div class="rental-card__info">
+            <p class="rental-card__name">Серфборд</p>
+            <p class="rental-card__dates">📅 10.07.2023 — 14.07.2023 &nbsp;|&nbsp; 4 дні</p>
+            <p style="color:var(--gray); font-size:0.85rem; margin-top:4px;">Сплачено: <strong style="color:var(--white);">800 грн</strong></p>
+          </div>
+          <div class="rental-card__actions">
+            <span class="badge" style="background:rgba(138,155,176,0.15); color:var(--gray);">Завершена</span>
+            <button class="btn btn--outline">Орендувати знову</button>
+          </div>
+        </article>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <p class="logo">SPORT<span>RENT</span></p>
+        <p>Ваш надійний партнер у світі активного відпочинку та спорту.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Навігація</h4>
+        <ul>
+          <li><a href="equipment.html">Обладнання</a></li>
+          <li><a href="rental.html">Мої оренди</a></li>
+          <li><a href="payment.html">Оплата</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Контакти</h4>
+        <ul class="footer-contact">
+          <li>📍 вул. Спортивна, 12, Київ</li>
+          <li>📞 +38 (044) 123-45-67</li>
+          <li>✉️ info@sportrent.ua</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 SportRent. Усі права захищені.</p>
+    </div>
+  </footer>
+</body>
+</html>
