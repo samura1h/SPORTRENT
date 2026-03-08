@@ -76,11 +76,22 @@ select:focus-visible {
   border-radius: 4px;
 }
 
-img { max-width: 100%; height: auto; display: block; border-radius: var(--radius); }
+img { 
+  max-width: 100%; 
+  height: auto; 
+  display: block; 
+  border-radius: var(--radius); 
+}
 
-h1, h2, h3 { font-family: var(--font-head); letter-spacing: 1px; line-height: 1.1; }
+h1, h2, h3 { 
+  font-family: var(--font-head); 
+  letter-spacing: 1px; 
+  line-height: 1.1;
+ }
 
-ul { list-style: none; }
+ul { 
+  list-style: none;
+ }
 
 /* =============================================
    HEADER / NAVIGATION
@@ -114,7 +125,9 @@ header {
   flex-shrink: 0;
 }
 
-.logo span { color: var(--orange); }
+.logo span { 
+  color: var(--orange); 
+}
 
 nav ul {
   display: flex;
@@ -268,8 +281,14 @@ main {
   white-space: nowrap;
 }
 
-.badge--available { background: rgba(0,200,100,0.15); color: #00c864; }
-.badge--rented    { background: rgba(244,112,10,0.15); color: var(--orange); }
+.badge--available { 
+  background: rgba(0,200,100,0.15); 
+  color: #00c864; 
+}
+.badge--rented    { 
+  background: rgba(244,112,10,0.15); 
+  color: var(--orange); 
+}
 
 .price {
   font-family: var(--font-head);
@@ -277,7 +296,11 @@ main {
   color: var(--orange);
 }
 
-.price small { font-family: var(--font-body); font-size: 0.75rem; color: var(--gray); }
+.price small { 
+  font-family: var(--font-body); 
+  font-size: 0.75rem; 
+  color: var(--gray); 
+}
 
 /* =============================================
    BUTTONS
@@ -300,17 +323,42 @@ main {
   -webkit-user-select: none;
 }
 
-.btn--primary { background: var(--orange); color: var(--navy); width: 100%; text-align: center; }
-.btn--outline  { background: transparent; border: 2px solid var(--orange); color: var(--orange); }
-.btn--danger   { background: transparent; border: 2px solid #e74c3c; color: #e74c3c; }
-
-@media (hover: hover) {
-  .btn--primary:hover { background: var(--orange-h); transform: translateY(-1px); }
-  .btn--outline:hover { background: var(--orange); color: var(--navy); }
-  .btn--danger:hover  { background: #e74c3c; color: #fff; }
+.btn--primary { 
+  background: var(--orange); 
+  color: var(--navy); 
+  width: 100%; 
+  text-align: center; 
+}
+.btn--outline  { 
+  background: transparent; 
+  border: 2px solid var(--orange); 
+  color: var(--orange); 
+}
+.btn--danger   { 
+  background: transparent; 
+  border: 2px solid #e74c3c; 
+  color: #e74c3c; 
 }
 
-.btn:active { opacity: 0.85; transform: scale(0.98); }
+@media (hover: hover) {
+  .btn--primary:hover { 
+    background: var(--orange-h); 
+    transform: translateY(-1px); 
+  }
+  .btn--outline:hover { 
+    background: var(--orange); 
+    color: var(--navy);
+   }
+  .btn--danger:hover  { 
+    background: #e74c3c; 
+    color: #fff;
+   }
+}
+
+.btn:active { 
+  opacity: 0.85; 
+  transform: scale(0.98); 
+}
 
 /* =============================================
    RENTALS
@@ -342,7 +390,11 @@ main {
   background: rgba(244,112,10,0.08);
 }
 
-.rental-list { display: flex; flex-direction: column; gap: var(--space-sm); }
+.rental-list { 
+  display: flex; 
+  flex-direction: column; 
+  gap: var(--space-sm); 
+}
 
 .rental-card {
   background: var(--card-bg);
@@ -358,18 +410,36 @@ main {
 }
 
 @media (hover: hover) {
-  .rental-card:hover { border-color: var(--orange); }
+  .rental-card:hover { 
+    border-color: var(--orange); }
 }
 
-.rental-card__icon { font-size: 2.5rem; flex-shrink: 0; }
+.rental-card__icon { 
+  font-size: 2.5rem;
+   flex-shrink: 0;
+   }
 
-.rental-card__info { flex: 1; min-width: 160px; }
+.rental-card__info {
+   flex: 1;
+    min-width: 160px;
+   }
 
-.rental-card__name { font-size: 1.3rem; font-family: var(--font-head); }
+.rental-card__name { 
+  font-size: 1.3rem;
+   font-family: var(--font-head);
+   }
 
-.rental-card__dates { color: var(--gray); font-size: 0.9rem; }
+.rental-card__dates { 
+  color: var(--gray); 
+  font-size: 0.9rem;
+ }
 
-.rental-card__actions { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+.rental-card__actions { 
+  display: flex; gap: 10px;
+   flex-wrap: wrap; 
+  align-items: center;
+ }
+
 
 /* =============================================
    PAYMENT PAGE
@@ -430,7 +500,10 @@ main {
 }
 
 .form-group input:focus,
-.form-group select:focus { border-color: var(--orange); }
+.form-group select:focus { 
+  border-color: var(--orange); 
+}
+
 
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-sm); }
 
@@ -534,13 +607,24 @@ footer {
    ПЛАНШЕТ ПОРТРЕТ (≤ 900px)
    ============================================= */
 @media (max-width: 900px) {
-  .payment-layout { grid-template-columns: 1fr; }
-  .payment-summary-card { order: -1; }
+  .payment-layout { 
+    grid-template-columns: 1fr;
+   }
+  .payment-summary-card {
+     order: -1;
+     }
 
-  .footer-inner { grid-template-columns: 1fr 1fr; }
-  .footer-brand { grid-column: 1 / -1; }
+  .footer-inner {
+     grid-template-columns: 1fr 1fr;
+     }
+  .footer-brand { 
+    grid-column: 1 / -1;
+   }
 
-  .equipment-grid { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: var(--space-sm); }
+  .equipment-grid { 
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+     gap: var(--space-sm); 
+    }
 }
 
 /* =============================================
@@ -551,9 +635,14 @@ footer {
     --space-md: 16px;
     --space-lg: 24px;
   }
-
-  .header-inner { padding: 0 var(--space-sm); height: 60px; }
-  .logo { font-size: 1.6rem; }
+ 
+  .header-inner { 
+    padding: 0 var(--space-sm);
+     height: 60px;
+     }
+  .logo {
+     font-size: 1.6rem;
+     }
 
   /* Мобільне меню */
   nav {
@@ -569,7 +658,9 @@ footer {
     box-shadow: 0 8px 24px rgba(0,0,0,0.4);
   }
 
-  nav.open { display: block; }
+  nav.open { 
+    display: block;
+   }
 
   nav ul {
     flex-direction: column;
@@ -586,37 +677,79 @@ footer {
     border-radius: 8px;
   }
 
-  .burger { display: flex; }
+  .burger { 
+    display: flex;
+   }
 
-  main { padding: var(--space-sm); }
+  main { 
+    padding: var(--space-sm);
+   }
 
-  .equipment-grid { grid-template-columns: 1fr; gap: var(--space-sm); }
+  .equipment-grid { 
+    grid-template-columns: 1fr;
+     gap: var(--space-sm);
+     }
 
-  .equipment-card__body { padding: var(--space-sm); }
+  .equipment-card__body { 
+    padding: var(--space-sm);
+   }
 
-  .rental-card { flex-direction: column; align-items: flex-start; gap: var(--space-sm); }
+  .rental-card {
+     flex-direction: column;
+      align-items: flex-start;
+       gap: var(--space-sm);
+       }
 
-  .rental-card__actions { width: 100%; justify-content: flex-start; }
-  .rental-card__actions .btn { flex: 1; min-width: 100px; }
+  .rental-card__actions {
+     width: 100%;
+      justify-content: flex-start;
+     }
+  .rental-card__actions .btn { 
+    flex: 1; 
+    min-width: 100px;
+   }
 
-  .footer-inner { grid-template-columns: 1fr; gap: var(--space-md); }
+  .footer-inner { 
+    grid-template-columns: 1fr;
+     gap: var(--space-md); 
+    }
 
-  .form-row { grid-template-columns: 1fr; }
+  .form-row { 
+    grid-template-columns: 1fr;
+   }
 
-  .rentals-tabs { flex-direction: column; }
-  .tab-btn { text-align: center; }
+  .rentals-tabs { 
+    flex-direction: column;
+   }
+  .tab-btn { 
+    text-align: center;
+   }
 }
 
 /* =============================================
    МАЛЕНЬКИЙ ТЕЛЕФОН (≤ 375px) — iPhone SE
    ============================================= */
 @media (max-width: 375px) {
-  .logo { font-size: 1.3rem; }
-  .section-title { font-size: 1.5rem; }
-  .equipment-card__img-placeholder { height: 130px; font-size: 2.2rem; }
-  .payment-form-card, .payment-summary-card { padding: var(--space-sm); }
-  .form-group input, .form-group select { padding: 10px 12px; }
-  .btn { padding: 10px 12px; font-size: 0.88rem; }
+  .logo { 
+    font-size: 1.3rem;
+   }
+  .section-title {
+     font-size: 1.5rem;
+     }
+  .equipment-card__img-placeholder {
+     height: 130px;
+      font-size: 2.2rem;
+     }
+  .payment-form-card, .payment-summary-card {
+     padding: var(--space-sm);
+     }
+  .form-group input, .form-group select {
+     padding: 10px 12px;
+     }
+  .btn { 
+    padding: 10px 12px; 
+    font-size: 0.88rem;
+      }    
   .badge { font-size: 0.7rem; padding: 3px 8px; }
   .rental-card__name { font-size: 1.1rem; }
 }
